@@ -61,15 +61,16 @@ class Signup extends Component {
                 })
                 .catch(error => {
                     let err=error
-                    if (error.data.errmsg) {
-                        err = error.data.errmsg
-                    }
-                    else if (error.data.errors.password) {
-                        err = "Invalid Password, must be atleast 7 letters."
-                    }
-                    else {
-                        err = error.data.message
-                    }
+                    console.log(err)
+                    // if (error.data.errmsg) {
+                    //     err = error.data.errmsg
+                    // }
+                    // else if (error.data.errors.password) {
+                    //     err = "Invalid Password, must be atleast 7 letters."
+                    // }
+                    // else {
+                    //     err = error.data.message
+                    // }
                     this.setState({
                         signupFailed: true,
                         errMessage: err

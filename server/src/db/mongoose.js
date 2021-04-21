@@ -6,3 +6,4 @@ mongoose.connect(process.env.MONGODB_URL, {
     useFindAndModify: false,
     useUnifiedTopology: true
 })
+console.log('db is running')

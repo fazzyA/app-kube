@@ -13,8 +13,9 @@ spec:
         app: todo-server-app
     spec:
       containers:
-      - image: fazzyaziz/backend-mern:v1
+      - image: fazzyaziz/backend-mern:v3
         name: container1
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 5000
         envFrom:

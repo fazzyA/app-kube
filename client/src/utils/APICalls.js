@@ -5,6 +5,10 @@ const axiosInstance = axios.create({
     withCredentials: true,
 });
 
+// const axiosInstance = axios.create({
+//     baseURL: process.env.REACT_APP_baseAPIURL,
+//     // withCredentials: true,
+// });
 axiosInstance.interceptors.response.use(
     res => {
 
