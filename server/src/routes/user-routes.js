@@ -45,6 +45,7 @@ routes.post('/init', auth, async (req, res) => {
 
 // Login user
 routes.post('/login', async (req, res) => {
+    console.log('im in login BE')
     try {
         const cookieOptions = {
             httpOnly: true,

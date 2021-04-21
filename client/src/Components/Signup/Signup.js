@@ -60,7 +60,7 @@ class Signup extends Component {
                     this.props.signupDone()
                 })
                 .catch(error => {
-                    let err
+                    let err=error
                     if (error.data.errmsg) {
                         err = error.data.errmsg
                     }

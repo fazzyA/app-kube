@@ -10,7 +10,7 @@ COPY ./public ./public
 
 COPY ./src ./src
 
-ENV REACT_APP_baseAPIURL=http://20.197.114.87:32489
+ENV REACT_APP_baseAPIURL=http://20.195.33.143:30505
 
 RUN yarn build
 

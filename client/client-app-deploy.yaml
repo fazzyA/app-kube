@@ -13,6 +13,5 @@ spec:
         app: todo-client-app
     spec:
       containers:
-      - image: fazzyaziz/frontend-mern:latest
+      - image: fazzyaziz/frontend-mern:v1
         name: container1
-        imagePullPolicy: IfNotPresent
