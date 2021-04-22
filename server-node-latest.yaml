@@ -1,0 +1,184 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-04-22T01:20:00Z"
+  generateName: node-todoapp-server-5df4d6ffd-
+  labels:
+    app: node-todoapp-server
+    pod-template-hash: 5df4d6ffd
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"eee2ac5c-f64b-4045-99de-c0a7ce4fecc0"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:containers:
+          k:{"name":"container1"}:
+            .: {}
+            f:envFrom: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":5000,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-04-22T01:20:00Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.244.0.152"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-04-22T01:20:01Z"
+  name: node-todoapp-server-5df4d6ffd-j5d24
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: node-todoapp-server-5df4d6ffd
+    uid: eee2ac5c-f64b-4045-99de-c0a7ce4fecc0
+  resourceVersion: "811362"
+  selfLink: /api/v1/namespaces/default/pods/node-todoapp-server-5df4d6ffd-j5d24
+  uid: fb6d2d6d-f8a8-4142-9c22-7310f795ee30
+spec:
+  containers:
+  - envFrom:
+    - configMapRef:
+        name: server-config
+    - secretRef:
+        name: server-secret
+    image: ameenalam/node-todoapp-server:latest
+    imagePullPolicy: IfNotPresent
+    name: container1
+    ports:
+    - containerPort: 5000
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-qfpxg
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: aks-agentpool-91279187-vmss000000
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-qfpxg
+    secret:
+      defaultMode: 420
+      secretName: default-token-qfpxg
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-22T01:20:00Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-22T01:20:01Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-22T01:20:01Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-22T01:20:00Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://3270fe64c466264ef3e679fe15fc5c842cf4b7b8a1d5d58a8c63214a0086ba64
+    image: docker.io/ameenalam/node-todoapp-server:latest
+    imageID: docker.io/ameenalam/node-todoapp-server@sha256:eddca26f9af7624bad5e891f09330663eabf813e1b7ab65a70ba49b9682cec3e
+    lastState: {}
+    name: container1
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-04-22T01:20:01Z"
+  hostIP: 10.240.0.4
+  phase: Running
+  podIP: 10.244.0.152
+  podIPs:
+  - ip: 10.244.0.152
+  qosClass: BestEffort
+  startTime: "2021-04-22T01:20:00Z"
