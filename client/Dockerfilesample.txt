@@ -10,11 +10,13 @@ COPY ./public ./public
 
 COPY ./src ./src
 
+ENV REACT_APP_baseAPIURL=http://20.195.33.143:30505
+
 RUN yarn build
 
 FROM nginx:latest
 
-LABEL maintainer=finosys
+LABEL maintainer=faiza
 
 COPY --from=todo-app-build /client/build/ /usr/share/nginx/html
 
